@@ -8,6 +8,7 @@
 }
 
 .catalog__title {
+  padding-top: 50px;
   font-size: 3.6rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
