@@ -1,0 +1,145 @@
+.catalog {
+  padding: 6rem 0;
+}
+
+.catalog__header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.catalog__title {
+  font-size: 3.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+}
+
+.catalog__subtitle {
+  font-size: 1.8rem;
+  color: var(--color-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.catalog__categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.catalog__category-btn {
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius);
+  background-color: transparent;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.catalog__category-btn:hover {
+  background-color: rgba(39, 39, 39, 0.05);
+  transform: translateY(-2px);
+}
+
+.catalog__category-btn--active {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+}
+
+.catalog__category-btn--active:hover {
+  background-color: var(--color-primary);
+}
+
+.catalog__products {
+  margin-top: 3rem;
+}
+
+.catalog__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.catalog__product {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  background-color: white;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.5s ease;
+}
+
+.catalog__product:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Product styles - Додатково до вже існуючих стилів з Home.css */
+.product__price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 1.5rem;
+}
+
+.catalog__empty {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--color-secondary);
+  padding: 5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .catalog__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog__title {
+    font-size: 3rem;
+  }
+
+  .catalog__categories {
+    gap: 0.8rem;
+  }
+
+  .catalog__category-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .catalog__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog__title {
+    font-size: 2.6rem;
+  }
+
+  .catalog__subtitle {
+    font-size: 1.6rem;
+  }
+
+  .catalog__categories {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .catalog__category-btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+}

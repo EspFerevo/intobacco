@@ -1,0 +1,112 @@
+.floating-socials {
+  position: fixed;
+  right: 20px;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: all 0.3s ease;
+}
+
+.floating-socials__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  color: var(--color-light);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.floating-socials__item svg {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+}
+
+.floating-socials__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.floating-socials__item:hover svg {
+  transform: scale(1.1);
+}
+
+.floating-socials__tooltip {
+  position: absolute;
+  left: -80px;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.floating-socials__tooltip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid var(--color-dark);
+}
+
+.floating-socials__item:hover .floating-socials__tooltip {
+  opacity: 1;
+  visibility: visible;
+  left: -100px;
+}
+
+/* Social media specific colors */
+.floating-socials__item--telegram {
+  background-color: #0088cc;
+}
+
+.floating-socials__item--instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.floating-socials__item--viber {
+  background-color: #7360f2;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .floating-socials {
+    right: 10px;
+  }
+
+  .floating-socials__item {
+    width: 40px;
+    height: 40px;
+  }
+
+  .floating-socials__item svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-socials {
+    right: 5px;
+  }
+
+  .floating-socials__item {
+    width: 35px;
+    height: 35px;
+  }
+}
