@@ -264,7 +264,6 @@ const Layout = () => {
               <Link to="/delivery" className="footer__link">Доставка та оплата</Link>
             </div>
             <div className="footer__developer">
-              <span className="footer__developer-text">Розроблено</span>
               <span className="footer__developer-logo">EspFerevo</span>
             </div>
           </div>
